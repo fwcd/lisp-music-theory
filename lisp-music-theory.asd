@@ -8,6 +8,7 @@
                 ((:file "main")
                  (:file "interval")
                  (:file "note")
+                 (:file "scale")
                  (:file "utils"))))
   :description ""
   :in-order-to ((test-op (test-op "lisp-music-theory/tests"))))

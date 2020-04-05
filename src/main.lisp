@@ -1,6 +1,8 @@
 (defpackage lisp-music-theory
   (:use :cl)
   (:export
-    #:note
-    #:interval))
+    :note
+    :interval
+    :major-scale
+    :minor-scale))
 (in-package :lisp-music-theory)

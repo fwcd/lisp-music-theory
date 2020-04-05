@@ -1,6 +1,11 @@
 (in-package :lisp-music-theory)
 
-(defun interval (note iv)
+(defun interval (note interval)
   (make-note
     :class (note-class note)
-    :interval (+ (note-interval note) iv)))
+    :accidental ()
+    :interval (+ (note-interval note) interval)))
+
+; The identity interval
+(defun unison (note)
+  note)

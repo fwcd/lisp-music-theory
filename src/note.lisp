@@ -2,6 +2,17 @@
 
 (defstruct note class accidental octave)
 
+; Returns the note with the given octave.
+(defun octave (n o)
+  (make-note
+    :class (note-class n)
+    :accidental (note-accidental n)
+    :octave NIL))
+
+; Returns the note with the octave 0.
+(defun unoctave (n)
+  (octave n NIL))
+
 (defun parse-class (c)
   (case (char-downcase c)
     ((#\c) 'c)
