@@ -7,26 +7,26 @@
   (make-note
     :class (note-class n)
     :accidental (note-accidental n)
-    :octave NIL))
+    :octave o))
 
 ; Returns the note with the octave 0.
 (defun unoctave (n)
-  (octave n NIL))
+  (octave n 0))
 
 (defun parse-class (c)
   (case (char-downcase c)
-    ((#\c) 'c)
-    ((#\d) 'd)
-    ((#\e) 'e)
-    ((#\f) 'f)
-    ((#\g) 'g)
-    ((#\a) 'a)
-    ((#\b) 'b)))
+    ((#\c) :c)
+    ((#\d) :d)
+    ((#\e) :e)
+    ((#\f) :f)
+    ((#\g) :g)
+    ((#\a) :a)
+    ((#\b) :b)))
 
 (defun parse-accidental (c)
   (case c
-    ((#\#) 'sharp)
-    ((#\b) 'flat)))
+    ((#\#) :sharp)
+    ((#\b) :flat)))
 
 (defun parse-octave (c)
   (digit-char-p c))
