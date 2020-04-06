@@ -21,5 +21,8 @@
     #:major-seventh
     #:perfect-octave
     #:major-scale
-    #:minor-scale))
+    #:minor-scale
+    #:chord
+    #:major-triad
+    #:minor-triad))
 (in-package :lisp-music-theory)
