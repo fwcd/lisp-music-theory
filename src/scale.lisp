@@ -22,9 +22,6 @@
 (defun semitone-to-unoctaved-notes (semitone)
   (nth semitone unoctaved-notes))
 
-(defun pick-enharmonic-from-scale (notes scale)
-  (find-if (lambda (n) (find (note-class n) scale)) notes))
-
 (defun pick-enharmonic (notes noteclass)
   (find-if (lambda (n) (equal (note-class n) noteclass)) notes))
 
@@ -32,10 +29,10 @@
   (+ (unoctaved-note-to-semitone (unoctave n))
      (* (note-octave n) semitones)))
 
-(defun semitone-to-note (s scale)
+(defun semitone-to-note (s)
   (let ((semitone (mod s semitones)))
     (octave
-      (pick-enharmonic-from-scale (semitone-to-unoctaved-notes semitone) scale)
+      (first (semitone-to-unoctaved-notes semitone))
       (floor s semitones))))
 
 (defun diatonic-minor-step (i)
